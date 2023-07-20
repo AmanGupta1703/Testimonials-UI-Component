@@ -1,0 +1,213 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&family=Roboto:wght@400;500&display=swap");
+
+:root {
+    --ff-primary: "Roboto", sans-serif;
+    --ff-secondary: "Josefin Sans", sans-serif;
+
+    --fw-regular: 400;
+    --fw-medium: 500;
+    --fw-bold: 700;
+
+    --fs-base: 1rem;
+    --fs-12: 0.75rem;
+    --fs-14: 0.875rem;
+    --fs-18: 1.125rem;
+    --fs-32: 2rem;
+    --fs-48: 3rem;
+
+    --clr-black: #202020;
+
+    --clr-navy-blue: #071C4D;
+    --clr-dark-indigo: #0B163F;
+
+    --clr-grayish-white: #F8F9FA;
+
+    /* CARD 1 */
+    --clr-soft-mint: #DEF4ED;
+    --clr-bright-green: #22C55E;
+    --bs-green: 8px 8px 0px 0px #5BB297;
+    
+    /* CARD 2 */
+    --clr-pale-pink: #FCDDE1;
+    --clr-coral: #FE6B7E; 
+    --bs-red: 8px 8px 0px 0px #FE6B7E;
+    
+    /* CARD 3 */
+    --clr-light-blue: #CEDDFF;
+    --clr-bright-blue: #175CFF;
+    --bs-blue: 8px 8px 0px 0px var(--clr-bright-blue);
+}
+
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: inherit;
+}
+
+/* write your CSS here */
+body {
+    color: var(--clr-black);
+    background: var(--clr-grayish-white);
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--ff-primary);
+    font-weight: var(--fw-regular);
+    min-height: 100vh;
+}
+
+button {
+    font: inherit;
+    border: none;
+    background: transparent;
+}
+
+.container {
+    width: 100%;
+    /* max-width: 85vw; */
+    margin: 0 auto;
+    width: 1300px;
+}
+
+.d-block {
+    display: block;
+}
+
+/* ======== HEADER ========= */
+.main__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.main__title {
+    font-family: var(--ff-secondary);
+    font-size: var(--fs-48);
+}
+
+.button-container {
+    display: flex;
+    align-items: center;
+    gap: 1.375em;
+}
+
+.btn {
+    cursor: pointer;
+    color: var(--clr-dark-indigo);
+    border: 1px solid var(--clr-dark-indigo);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--fs-48);
+    width: 64px;
+    height: 64px;
+
+    transition: all 500ms ease;
+}
+
+.btn:is(:hover, :focus) {
+    color: var(--clr-grayish-white);
+    background: var(--clr-dark-indigo);
+    transform: scale(.9);
+}
+
+/* ========== CARD ========== */
+.testimonials-section {
+    display: flex;
+    gap: 5.06em;
+    margin: 2.5em 0 0;
+}
+
+.card {
+    border-radius: 0.5em;
+    flex-basis: 398px;
+    flex-grow: 1;
+    flex-shrink: 1;
+    padding: 1em;
+}
+
+.card__rating {
+    margin: 0 0 0.94em;
+}
+
+.card__title {
+    color: var(--clr-navy-blue);
+    font-size: var(--fs-32);
+    font-family: var(--ff-secondary);
+    margin: 0 0 0.47em;
+}
+
+.card__text {
+    font-size: var(--fs-18);
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    gap: 0.875em; 
+    margin: 1.75em 0 0;
+}
+
+.profile__image {
+    height: 100%;
+}
+
+.profile__title {
+    color: var(--clr-navy-blue);
+    font-size: var(--fs-14);
+    font-weight: var(--fw-medium);
+}
+
+.profile__text {
+    font-size: var(--fs-12);
+}
+
+.card--green {
+    background: var(--clr-soft-mint);
+    box-shadow: var(--bs-green);
+}
+
+.card--red {
+    background: var(--clr-pale-pink);
+    box-shadow: var(--bs-red);
+}
+
+.card--blue {
+    background: var(--clr-light-blue);
+    box-shadow: var(--bs-blue);
+}
+
+@media (max-width: 378px) {
+    :root {
+        --fs-28: 1.75rem;
+    }
+
+    .container {
+        width: 95vw;
+        padding: 1em;
+    }
+
+    .main__title {
+        font-size: var(--fs-28);
+    }
+
+    .d-inline {
+        display: inline;
+    }
+
+    .button-container {
+        display: none;
+    }
+
+    .testimonials-section {
+        flex-direction: column;
+    }
+
+    .card {
+        flex-basis: 320px;
+    }
+}
